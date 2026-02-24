@@ -1,329 +1,255 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PORTFOLIO WEBSITE</title>
+    <title>Sejal Soni | Premium Portfolio</title>
+    
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="portfolio.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
-        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/divbs/jquery/3.7.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Outfit', 'sans-serif'],
+                    },
+                    colors: {
+                        darkbg: '#0b1120',
+                        cardbg: '#1e293b',
+                        primary: '#818cf8', // Indigo
+                        secondary: '#c084fc', // Purple
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #0b1120; }
+        ::-webkit-scrollbar-thumb { background: #4f46e5; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #818cf8; }
+        
+        /* Gradient Text Utility */
+        .text-gradient {
+            background: linear-gradient(to right, #818cf8, #c084fc);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
 </head>
 
-<body>
+<body class="bg-darkbg text-slate-300 font-sans antialiased overflow-x-hidden">
 
-    <!-- PORTFOLIO WEBSITE -->
-
-    <!-- SECTION 1 -->
-
-    <section id="home" class="bg-[url(http://127.0.0.1:5500/PROJECTS/MY%20ALBUM/1ST.jpg)] bg-cover w-full h-screen text-white">
-
-        <header class="flex justify-between">
-
-            <img src="/MY/portfolio_logo_2-removebg-preview.png" alt="" class="mt-5 ml-5 w-80 h-32 ">
-
-            <div class=" flex gap-4 p-10 text-4xl font-bold font-sans">
-                <div class="flex gap-10">
-                    <button class=" hover:bg-blue-700 p-10 hover:text-gray-900"><a href="#home">HOME</a></button>
-                    <button class="hover:bg-blue-700 p-10 hover:text-gray-900"><a href="#about">ABOUT</a></button>
-                    <button class="hover:bg-blue-700 p-10 hover:text-gray-900"><a href="#resume">RESUME</a></button>
-                    <button class="hover:bg-blue-700 p-10 hover:text-gray-900"><a href="#services">SERVICES</a></button>
-                    <button class="hover:bg-blue-700 p-10 hover:text-gray-900"><a
-                            href="#portfolio">PORTFOLIO</a></button>
-                    <button class="hover:bg-blue-700 p-10 hover:text-gray-900"><a href="#contact">CONTACT</a></button>
-                    <br>
-
-                </div>
-               
-
-            </div>
-            <div class="text-4xl mr-5 flex gap-6 mt-16">
-                <i class="fa-solid fa-house"></i>
-                <i class="fa-brands fa-instagram"></i>
-                <i class="fa-brands fa-linkedin"></i>
-                <i class="fa-brands fa-facebook"></i>
+    <nav class="fixed w-full z-50 top-0 transition-all duration-300 bg-darkbg/70 backdrop-blur-lg border-b border-white/10">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#home" class="text-3xl font-extrabold text-white tracking-widest">
+                SEJAL<span class="text-primary">.</span>
+            </a>
+            
+            <div class="hidden md:flex space-x-8 text-sm font-semibold tracking-wider text-gray-300">
+                <a href="#home" class="hover:text-primary transition duration-300">HOME</a>
+                <a href="#about" class="hover:text-primary transition duration-300">ABOUT</a>
+                <a href="#resume" class="hover:text-primary transition duration-300">RESUME</a>
+                <a href="#services" class="hover:text-primary transition duration-300">SERVICES</a>
+                <a href="#contact" class="hover:text-primary transition duration-300">CONTACT</a>
             </div>
 
-        </header>
+            <div class="hidden md:flex space-x-5 text-xl text-gray-400">
+                <a href="#" class="hover:text-white hover:scale-110 transition duration-300"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="#" class="hover:text-white hover:scale-110 transition duration-300"><i class="fa-brands fa-github"></i></a>
+                <a href="#" class="hover:text-white hover:scale-110 transition duration-300"><i class="fa-brands fa-instagram"></i></a>
+            </div>
+        </div>
+    </nav>
 
-        <div class="text-center p-96 mr-96">
-            <br><br><br>
-            <h1
-                class="font-bold text-9xl font-sans transition-transform ease-in-out  hover:translate-y-2 hover:scale-110">
-                $EJAL $ONI</h1>
+    <section id="home" class="relative w-full h-screen flex items-center justify-center overflow-hidden">
+        <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/20 rounded-full blur-[120px]"></div>
+        <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-secondary/20 rounded-full blur-[120px]"></div>
 
-            <br>
-            <h2 class="font-sans font-bold text-4xl">B.Tech CSE Student | Developer | Artist <br>
-                <a href="#about" class="mt-6 inline-block px-8 py-5 text-3xl font-semibold text-white bg-blue-500 rounded-lg hover:bg-blue-600 transition">Learn More About Me</a>
+        <div class="relative z-10 text-center px-6" data-aos="zoom-in" data-aos-duration="1000">
+            <p class="text-primary font-semibold tracking-widest mb-4 uppercase">Welcome to my universe</p>
+            <h1 class="text-6xl md:text-8xl font-extrabold text-white mb-6">
+                Hi, I'm <span class="text-gradient">Sejal Soni</span>
+            </h1>
+            <h2 class="text-xl md:text-2xl font-light text-gray-400 mb-10 max-w-2xl mx-auto">
+                A creative <strong class="text-white">Web Developer</strong> & B.Tech CSE Student focused on crafting immersive digital experiences.
             </h2>
-        </div>
-
-    </section>
-
-    <!-- section 2 -->
-
-    <section id="about" class="w-full h-screen mb-24">
-
-        <div id="niche2" class="text-center">
-
-            <h1 class="mt-52 text-7xl font-serif blur-sm">ABOUT ME</h1>
-            <h1 class="text-6xl font-bold font-serif">ABOUT ME</h1>
-            <p class="mt-5 text-3xl font-sans">passionate web designer and developer dedicated to crafting engaging and
-                user-friendly websites</p>
-
-        </div>
-
-        <div class="flex ml-24">
-            <img src="/PROJECTS/MY ALBUM/2nd .jpg" class="w-3/12 h-fit ml-64 mt-40 " alt="">
-
-
-            <div class="mt-40 ml-24">
-
-                <h1 class="text-5xl font-bold"> Web Developer & Advanced Excel</h1>
-                <p class="mt-10 text-3xl">The Portfolio website created for my business exceeded all expectations. It's
-                    professional, responsive, <br>and exactly what I needed!</p>
-
-                <div class="flex mt-20 ">
-                    <div class="mr-10 text-4xl">
-                        <h3 class="py-12"><strong>⪼ Birthday : </strong> 30 december 2002</h3>
-                        <h3 class="py-12"><strong>⪼ Website : </strong>www.example.com</h3>
-                        <h3 class="py-12"><strong>⪼ Phone : </strong>+919302317475</h3>
-                        <h3 class="py-12"><strong>⪼ City : </strong>Balaghat,MP</h3>
-                    </div>
-                    <div class="text-4xl">
-                        <h3 class="py-12"><strong>⪼ Age : </strong>22</h3>
-                        <h3 class="py-12"><strong>⪼ Degree : </strong>B.Tech [CSE] </h3>
-                        <h3 class="py-12"><strong>⪼ Email : </strong>sejalsoni372@gmail.com</h3>
-                        <h3 class="py-12"><strong>⪼ Nature : </strong>Good</h3>
-                    </div>
-
-                </div>
-                <p class="text-4xl pr-40"> I create responsive websites that deliver exceptional user experiences. My
-                    goal is to blend design and functionality to help brands leave a lasting digital impression.
-                    <br><br>Let’s build something amazing together
-                    <br> <a href="#niche"> <img class="ml-80 mt-12 w-40 animate-bounce"
-                            src="https://cdn-icons-png.flaticon.com/128/10412/10412386.png" alt=""></a>
-                </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#portfolio" class="px-8 py-4 text-lg font-semibold text-white bg-gradient-to-r from-primary to-secondary rounded-full hover:scale-105 transition transform shadow-[0_0_20px_rgba(99,102,241,0.4)]">
+                    View My Work
+                </a>
+                <a href="#contact" class="px-8 py-4 text-lg font-semibold text-white border border-white/20 rounded-full hover:bg-white/10 transition transform">
+                    Contact Me
+                </a>
             </div>
         </div>
-
     </section>
 
-    <!-- section 3 -->
+    <section id="about" class="py-24 relative border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-20" data-aos="fade-up">
+                <h2 class="text-4xl md:text-5xl font-bold text-white mb-4">About <span class="text-gradient">Me</span></h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-primary to-secondary mx-auto rounded-full"></div>
+            </div>
 
-    <section id="resume" class="w-full h-screen mt-32">
-
-
-        <div id="niche" class="text-center vertical">
-
-            <h1 class="mt-52 text-7xl font-serif blur-sm">MY RESUME</h1>
-            <h1 class="text-7xl font-bh2d font-serif mb-10">MY RESUME</h1>
-            <p class="mt-20 text-3xl  font-sans">"I speciadivze in creating modern, responsive, and functional websites
-                tailored to meet your unique needs."
-            </p>
-
-        </div>
-
-
-        <span class="flex">
-            <div class=" p-24  bg-gray-100 mx-80 my-32 max-h-screen max-w-screen-2xl">
-                <div class="gap-6">
-                    <h1 class="text-6xl font-serif font-bold">Summary</h1><br>
-                    <h2 class="text-slate-500 text-4xl font-mono">WEB DEVELOPER</h2><br>
-                    <p class="text-3xl">"Web development is the art and science of creating, designing, and maintaining
-                        websites and web
-                        applications. It involves a blend of technical expertise and creativity to build responsive,
-                        user-friendly, and visually appealing digital experiences." </p><br>
-                    <div class="text-3xl">
-                        <h2> ⁕ @connect siksha</h2>
-                        <br>
-                        <h2> ⁕ +919131782103</h2>
-                        <br>
-                        <h2> ⁕ Guide By - Kuldeep sir and Rohit sir</h2>
-                        <br>
-                        <h2> ⁕ Location - Balaghat</h2>
-                        <br>
-                        <h2> ⁕ Courses - Frontend & Backend</h2>
-                        <br>
-                    </div>
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-16 items-center">
+                <div class="md:col-span-5 relative flex justify-center" data-aos="fade-right">
+                    <div class="absolute inset-0 bg-gradient-to-r from-primary to-secondary rounded-2xl blur-lg opacity-50"></div>
+                    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                         alt="Sejal Soni" 
+                         class="relative w-full max-w-sm h-[450px] object-cover rounded-2xl border border-white/10 shadow-2xl grayscale hover:grayscale-0 transition duration-500">
                 </div>
-                <div>
-                    <h1 class="text-6xl font-serif font-bold">Education</h1><br>
-                    <h2 class="text-4xl text-slate-500 font-mono uppercase">Bachelor of Engineering and Technology</h2>
-                    <br>
-                    <p class="text-3xl">"The curriculum is designed to blend theoretical concepts with practical
-                        applications, enabling us to
-                        understand and solve real-world problems."
-                        "Laboratory sessions, project work, and internships are integral parts of the program, offering
-                        hands-on experience." </p>
-                    <br>
-                    <div class="text-3xl">
-                        <h2> ⁕ In Computer Science branch</h2>
-                        <br>
-                        <h2> ⁕ At Sardar Patel University</h2>
-                        <br>
-                        <h2> ⁕ Year - 2022-2023</h2>
-                        <br>
-                        <h2> ⁕ dongariya, Balaghat[MP]</h2>
-                        <br>
+
+                <div class="md:col-span-7" data-aos="fade-left">
+                    <h3 class="text-3xl font-bold text-white mb-6">Designing the web, <br>one pixel at a time.</h3>
+                    <p class="text-lg text-gray-400 mb-8 leading-relaxed">
+                        I am a passionate developer who bridges the gap between beautiful design and flawless functionality. My goal is to help brands leave a lasting digital impression through clean code and modern aesthetics.
+                    </p>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-y-4 gap-x-8 text-gray-300 bg-cardbg/50 p-6 rounded-2xl border border-white/5">
+                        <p><strong class="text-primary w-24 inline-block">Birthday:</strong> 30 Dec 2002</p>
+                        <p><strong class="text-primary w-24 inline-block">Age:</strong> 22</p>
+                        <p><strong class="text-primary w-24 inline-block">Phone:</strong> +91 9302317475</p>
+                        <p><strong class="text-primary w-24 inline-block">Email:</strong> sejal@example.com</p>
+                        <p><strong class="text-primary w-24 inline-block">City:</strong> Balaghat, MP</p>
+                        <p><strong class="text-primary w-24 inline-block">Degree:</strong> B.Tech [CSE]</p>
                     </div>
                 </div>
             </div>
+        </div>
+    </section>
 
-            <div class="p-10 bg-gray-100 mr-96 my-32 max-h-screen max-w-7xl px-32 pt-24">
-                <h1 class="text-6xl font-serif font-bold">Professional experience</h1><br>
-                <h2 class="text-gray-400 text-5xl font-mono">PROJECTS</h2><br>
-                <p class="text-3xl">"We specialize in crafting modern, user-friendly websites that bring your vision to
-                    life. Our projects focus on sleek designs, seamless functionality, and tailored solutions to meet
-                    your unique needs.</p><br>
-                <div class="text-3xl">
-                    <h1 class="text-gray-700">▣ Make expensive calculator</h1>
-                    <br>
-                    <p>
-                        ⁕ The HTML structures the calculator with a display and buttons.
-                        <br><br>
-                        ⁕ The CSS provides a sleek and "expensive" design, using gradients, shadows, and gold accents.
-                        <br><br>
-                        ⁕ The JavaScript manages the calculator's logic, handling input, clearing, and calculation.
-                    </p>
-                    <br>
-                    <video width="320" height="240" controls>
-                        <source src="/MY/calculator video.mp4" type="video/mp4">
-                        <!-- <source src="movie.ogg" type="video/ogg"> -->
-                        <audio controls>
-                            <source src="/MY/mixkit-wedding-01-657.mp3" type="audio/mpeg">
-                        </audio>
-                    </video>
+    <section id="resume" class="py-24 relative bg-cardbg/30 border-t border-white/5">
+        <div class="max-w-5xl mx-auto px-6">
+            <div class="text-center mb-20" data-aos="fade-up">
+                <h2 class="text-4xl md:text-5xl font-bold text-white mb-4">My <span class="text-gradient">Journey</span></h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-primary to-secondary mx-auto rounded-full"></div>
+            </div>
+
+            <div class="space-y-12 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-white/20 before:to-transparent">
+                
+                <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active" data-aos="fade-up">
+                    <div class="flex items-center justify-center w-10 h-10 rounded-full border border-white/20 bg-cardbg text-primary shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 shadow-[0_0_10px_rgba(99,102,241,0.5)] z-10">
+                        <i class="fa-solid fa-graduation-cap"></i>
+                    </div>
+                    <div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] p-6 rounded-2xl bg-cardbg border border-white/10 hover:border-primary/50 transition duration-300 shadow-xl">
+                        <div class="flex items-center justify-between mb-2">
+                            <h4 class="font-bold text-white text-xl">B.Tech in Computer Science</h4>
+                            <span class="text-sm font-medium text-primary">2022 - Present</span>
+                        </div>
+                        <p class="text-gray-400 text-sm">Sardar Patel University, Balaghat</p>
+                        <p class="text-gray-400 mt-4 text-sm leading-relaxed">Comprehensive curriculum blending theoretical software engineering concepts with practical lab sessions and project work.</p>
+                    </div>
+                </div>
+
+                <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active" data-aos="fade-up" data-aos-delay="100">
+                    <div class="flex items-center justify-center w-10 h-10 rounded-full border border-white/20 bg-cardbg text-secondary shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 shadow-[0_0_10px_rgba(192,132,252,0.5)] z-10">
+                        <i class="fa-solid fa-laptop-code"></i>
+                    </div>
+                    <div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] p-6 rounded-2xl bg-cardbg border border-white/10 hover:border-secondary/50 transition duration-300 shadow-xl">
+                        <div class="flex items-center justify-between mb-2">
+                            <h4 class="font-bold text-white text-xl">Web Developer</h4>
+                            <span class="text-sm font-medium text-secondary">Present</span>
+                        </div>
+                        <p class="text-gray-400 text-sm">@Connect Siksha</p>
+                        <p class="text-gray-400 mt-4 text-sm leading-relaxed">Mastering Frontend and Backend technologies to build responsive, user-friendly, and visually appealing digital experiences.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="py-24 relative border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-20" data-aos="fade-up">
+                <h2 class="text-4xl md:text-5xl font-bold text-white mb-4">What I <span class="text-gradient">Do</span></h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-primary to-secondary mx-auto rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="group p-8 bg-cardbg/40 backdrop-blur-sm rounded-2xl border border-white/10 hover:border-primary/50 hover:bg-cardbg transition duration-500" data-aos="fade-up" data-aos-delay="0">
+                    <div class="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center text-3xl text-primary mb-6 group-hover:scale-110 transition transform">
+                        <i class="fa-solid fa-code"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-white mb-3">Web Design</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Crafting beautiful, responsive portfolios and landing pages tailored perfectly to your brand identity.</p>
+                </div>
+
+                <div class="group p-8 bg-cardbg/40 backdrop-blur-sm rounded-2xl border border-white/10 hover:border-secondary/50 hover:bg-cardbg transition duration-500" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-14 h-14 bg-secondary/10 rounded-xl flex items-center justify-center text-3xl text-secondary mb-6 group-hover:scale-110 transition transform">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-white mb-3">E-Commerce</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Developing robust online stores using modern frameworks to maximize your sales and conversions.</p>
+                </div>
+
+                <div class="group p-8 bg-cardbg/40 backdrop-blur-sm rounded-2xl border border-white/10 hover:border-primary/50 hover:bg-cardbg transition duration-500" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center text-3xl text-primary mb-6 group-hover:scale-110 transition transform">
+                        <i class="fa-solid fa-mobile-screen"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-white mb-3">Responsive UI</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Ensuring your website looks and functions flawlessly across mobile, tablet, and desktop devices.</p>
                 </div>
             </div>
-    </section>
-
-    
-    <section class="mt-64">
-        </span>
-        <a href="#niche3" class="ml-96">
-
-            <button
-                class="p-10 text-4xl bg-gray-700 text-white font-bold rounded-lg shadow-lg hover:bg-gray-400 transition duration-300 ease-in-out">
-                Get Started ⇨
-            </button>
-        </a>
-        <section id="niche3" class="w-full h-screen p-32 mt-12 text-center bg-gray-100">
-            <div class="">
-
-                <h1 class="text-7xl font-serif blur-sm">PORTFOLIO</h1>
-                <h1 class="text-7xl font-bh2d font-serif mb-10">PORTFOLIO</h1>
-                <p class="mt-20 text-3xl  font-sans">"I speciadivze in creating modern, responsive, and functional
-                    websites
-                    tailored to meet your unique needs."
-                </p>
-
-            </div>
-            <div class="mt-12 flex justify-around sm:gap-10">
-                <figure class="mt-3 w-96 h-auto p-9 hover:bg-gray-300 border-4 border-gray-400 rounded-3xl shadow-xl">
-                    <strong class="text-6xl mt-4"><i class="fa-sharp-duotone fa-regular fa-user"></i></strong>
-                    <h1 class="text-3xl hover:text-gray-200">🌐Website Design & Development Services</h1>
-                    <p class="hover:text-black text-gray-400">✅ E-commerce Websites – Shopify, WooCommerce, Magento
-                        stores
-                        <br> ✅ Portfolio & Personal Websites – Showcasing your work or brand
-                    </p>
-                </figure>
-                <figure class="mt-3 w-96 h-auto p-9 hover:bg-gray-300 border-4 border-gray-400 rounded-3xl shadow-xl">
-                    <strong class="text-6xl mt-4"><i class="fa-solid fa-circle-user"></i></strong>
-                    <h1 class="text-3xl hover:text-gray-200">🛒E-Commerce Website Development Services</h1>
-                    <p class="hover:text-black text-gray-400">✅ Custom Web Applications – Tailored to your business
-                        logic and requirements
-                        <br> ✅ SaaS (Software as a Service) Development – Scalable cloud-based application
-                    </p>
-                </figure>
-                <figure class="mt-3 w-96 h-auto p-9 hover:bg-gray-300 border-4 border-gray-400 rounded-3xl shadow-xl">
-                    <strong class="text-6xl mt-4"><i class="fa-regular fa-star"></i></strong>
-                    <h1 class="text-3xl hover:text-gray-200">🛠 Web App Development Services</h1>
-                    <p class="hover:text-black text-gray-400">✅ E-commerce Websites – Shopify, WooCommerce, Magento
-                        stores
-                        <br> ✅ Portfolio & Personal Websites – Showcasing your work or brand
-                    </p>
-                </figure>
-                <figure class="mt-3 w-96 h-auto p-9 hover:bg-gray-300 border-4 border-gray-400 rounded-3xl shadow-xl">
-                    <strong class="text-6xl mt-4"><i class="fa-brands fa-windows"></i></strong>
-                    <h1 class="text-3xl hover:text-gray-200">🏗️ Custom CMS Development Services</h1>
-                    <p class="hover:text-black text-gray-400">✅ User-Friendly Dashboard – Intuitive admin panel to
-                        manage content, users, and settings
-                        <br> ✅ Role-Based Access Control – Custom permissions for admins, editors, and users
-                    </p>
-                </figure>
-                <figure class="mt-3 w-96 h-auto p-9 hover:bg-gray-300 border-4 border-gray-400 rounded-3xl shadow-xl">
-                    <strong class="text-6xl mt-4"><i class="fa-solid fa-envelope"></i></strong>
-                    <h1 class="text-3xl hover:text-gray-200">🔗API Development & Integration Services</h1>
-                    <p class="hover:text-black text-gray-400">✅ Custom API Development – RESTful & GraphQL APIs tailored
-                        to your business needs
-                        <br> ✅ Third-Party API Integration – Connect payment gateways, CRMs, social media, and more
-                    </p>
-                </figure>
-                <figure class="mt-3 w-96 h-auto p-9 hover:bg-gray-300 border-4 border-gray-400 rounded-3xl shadow-xl">
-                    <strong class="text-6xl mt-4"><i class="fa-solid fa-house"></i></strong>
-                    <h1 class="text-3xl hover:text-gray-200">🔧 Website Maintenance & Security Services</h1>
-                    <p class="hover:text-black text-gray-400">✅ Bug Fixes & Troubleshooting – Identify and resolve
-                        performance or functionality issues
-                        <br> ✅ Speed Optimization – Improve page load speed for a better user experience
-                    </p>
-                </figure>
-            </div>
-            <div class="bg-gray-300 p-5 mt-7 border-4">
-                <h1 class="text-center  font-bold font-serif text-5xl">⁕ OUR FACILITIES ⁕</h1>
-                <marquee class="w-100 text-4xl mt-10 font-bold text-blue-800" behavior="alternate" scrollamount="8"
-                    direction="right">Building Digital Experiences, One Pixel at a Time!</marquee>
-                <marquee class="w-100 text-4xl mt-10 font-bold text-pink-600" behavior="alternate" scrollamount="8"
-                    direction="left">Custom Websites That Engage, Convert, and Inspire.</marquee>
-                <marquee class="w-100 text-4xl mt-10 font-bold text-yellow-400" behavior="alternate" scrollamount="8"
-                    direction="right">Seamless Shopping, Maximum Conversions</marquee>
-                <marquee class="w-100 text-4xl mt-10 font-bold text-violet-500" behavior="alternate" scrollamount="8"
-                    direction="left">Innovative Web Apps for the Future of Business</marquee>
-            </div>
-        </section>
-
-      
-         <!-- section new -->
-        <section id="contact" class="mt-32">
-        <div id="niche4" class="text-center">
-            <h1 class="mt-52 text-7xl font-serif blur-sm">CONTACT ME</h1>
-            <h1 class="text-7xl font-bh2d font-serif mb-10">CONTACT ME</h1>
-           
         </div>
-        <section class="h-full bg-gradient-to-r from-blue-500 to-purple-600 py-10 justify-center">
-            <div class="container mx-auto px-6">
-                <h2 class="text-4xl font-bold text-center text-white mb-6">Get in Touch</h2>
-                <p class="text-3xl text-center text-white mb-8">Have a project or want to collaborate? Drop me a message!</p>
-                <form class="max-w-2xl mx-auto bg-white p-8 rounded-lg shadow-lg">
-                    <div class="mb-6">
-                        <label class="block text-gray-700 font-semibold mb-2" for="name">Name</label>
-                        <input type="text" id="name" placeholder="Your Name" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
-                    </div>
-                    <div class="mb-6">
-                        <label class="block text-gray-700 font-semibold mb-2" for="email">Email</label>
-                        <input type="email" id="email" placeholder="Your Email" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
-                    </div>
-                    <div class="mb-6">
-                        <label class="block text-gray-700 font-semibold mb-2" for="message">Message</label>
-                        <textarea id="message" rows="5" placeholder="Your Message" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
-                    </div>
-                    <a href="#home"><button  type="submit" class="w-full bg-blue-500 text-white py-3 rounded-lg font-semibold hover:bg-blue-600 transition">Send Message</button></a>
-                </form>
-            </div>
-        </section>
-        
-        </section>
-
     </section>
- 
-    <!-- section 4 -->
 
-   
+    <section id="contact" class="py-24 relative bg-cardbg/30 border-t border-white/5">
+        <div class="max-w-4xl mx-auto px-6">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-4xl md:text-5xl font-bold text-white mb-4">Let's <span class="text-gradient">Talk</span></h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-primary to-secondary mx-auto rounded-full mb-6"></div>
+                <p class="text-lg text-gray-400">Have a vision? Let's turn it into reality. Send me a message!</p>
+            </div>
+
+            <form class="bg-darkbg p-8 md:p-12 rounded-3xl border border-white/10 shadow-2xl relative overflow-hidden" data-aos="zoom-in">
+                <div class="absolute -top-24 -right-24 w-48 h-48 bg-primary/30 rounded-full blur-[80px] pointer-events-none"></div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6 relative z-10">
+                    <div>
+                        <label class="block text-gray-400 text-sm font-semibold mb-2 ml-1" for="name">Name</label>
+                        <input type="text" id="name" placeholder="John Doe" class="w-full px-5 py-4 bg-cardbg border border-white/10 text-white rounded-xl focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition placeholder-gray-600">
+                    </div>
+                    <div>
+                        <label class="block text-gray-400 text-sm font-semibold mb-2 ml-1" for="email">Email</label>
+                        <input type="email" id="email" placeholder="john@example.com" class="w-full px-5 py-4 bg-cardbg border border-white/10 text-white rounded-xl focus:outline-none focus:border-secondary focus:ring-1 focus:ring-secondary transition placeholder-gray-600">
+                    </div>
+                </div>
+                <div class="mb-8 relative z-10">
+                    <label class="block text-gray-400 text-sm font-semibold mb-2 ml-1" for="message">Message</label>
+                    <textarea id="message" rows="5" placeholder="Tell me about your project..." class="w-full px-5 py-4 bg-cardbg border border-white/10 text-white rounded-xl focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition resize-none placeholder-gray-600"></textarea>
+                </div>
+                <button type="submit" class="w-full bg-gradient-to-r from-primary to-secondary text-white font-bold py-4 rounded-xl hover:scale-[1.02] transition duration-300 shadow-[0_0_20px_rgba(99,102,241,0.3)] relative z-10">
+                    Send Message <i class="fa-solid fa-paper-plane ml-2"></i>
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <footer class="bg-darkbg text-center py-8 border-t border-white/5 relative z-10">
+        <p class="text-gray-500 text-sm">
+            &copy; 2024 Sejal Soni. Designed with <i class="fa-solid fa-heart text-secondary mx-1"></i>
+        </p>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Initialize Scroll Animations
+        AOS.init({
+            once: true, // whether animation should happen only once - while scrolling down
+            offset: 100, // offset (in px) from the original trigger point
+        });
+    </script>
 </body>
-
 </html>
